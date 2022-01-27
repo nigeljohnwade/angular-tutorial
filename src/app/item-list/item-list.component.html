@@ -1,6 +1,6 @@
 <h2>Items</h2>
 <ul *ngFor="let item of items">
-  <li>
+  <li *ngIf="item.name && item.description">
     <p>{{item.name}}</p>
     <p>{{item.description}}</p>
   </li>

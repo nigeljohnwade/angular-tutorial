@@ -12,7 +12,7 @@ export class ItemListComponent implements OnInit {
   constructor() {
   }
 
-  items = items
+  items = items;
 
   ngOnInit(): void {
   }
