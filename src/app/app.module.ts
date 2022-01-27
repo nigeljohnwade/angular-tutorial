@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {RouterModule} from "@angular/router";
 
-import { AppComponent } from './app.component';
-import { ItemListComponent } from './item-list/item-list.component';
+import {AppComponent} from './app.component';
+import {ItemListComponent} from './item-list/item-list.component';
 
 @NgModule({
   declarations: [
@@ -10,9 +11,13 @@ import { ItemListComponent } from './item-list/item-list.component';
     ItemListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      {path: '', component: ItemListComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
