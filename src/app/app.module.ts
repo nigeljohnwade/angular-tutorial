@@ -4,16 +4,19 @@ import {RouterModule} from "@angular/router";
 
 import {AppComponent} from './app.component';
 import {ItemListComponent} from './item-list/item-list.component';
+import { ItemComponent } from './item/item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ItemListComponent
+    ItemListComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: '', component: ItemListComponent}
+      {path: '', component: ItemListComponent},
+      {path: 'items/:itemId', component: ItemComponent}
     ])
   ],
   providers: [],

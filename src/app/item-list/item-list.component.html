@@ -1,7 +1,9 @@
 <h2>Items</h2>
 <ul *ngFor="let item of items">
   <li *ngIf="item.name && item.description">
-    <p>{{item.name}}</p>
-    <p>{{item.description}}</p>
+    <a [routerLink]="['/items', item.id]">
+      <p>{{item.name}}</p>
+      <p>{{item.description}}</p>
+    </a>
   </li>
 </ul>
