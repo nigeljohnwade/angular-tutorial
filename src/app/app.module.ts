@@ -6,13 +6,15 @@ import {AppComponent} from './app.component';
 import {ItemListComponent} from './item-list/item-list.component';
 import { ItemComponent } from './item/item.component';
 import { SavedItemsComponent } from './saved-items/saved-items.component';
+import { NavComponentComponent } from './nav-component/nav-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemListComponent,
     ItemComponent,
-    SavedItemsComponent
+    SavedItemsComponent,
+    NavComponentComponent
   ],
   imports: [
     BrowserModule,
