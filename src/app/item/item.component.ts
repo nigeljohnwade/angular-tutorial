@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {SaveItemService} from "../save-item.service";
 import {Item, items} from "../items";
+
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
@@ -9,16 +11,20 @@ import {Item, items} from "../items";
 export class ItemComponent implements OnInit {
   item: Item | undefined;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(
+    private route: ActivatedRoute,
+    private savedItemService: SaveItemService
+  ) {
   }
 
   ngOnInit() {
-// First get the product id from the current route.
     const routeParams = this.route.snapshot.paramMap;
-    const productIdFromRoute = Number(routeParams.get('itemId'));
+    const itemIdFromRoute = Number(routeParams.get('itemId'));
+    this.item = items.find(item => item.id === itemIdFromRoute);
+  }
 
-    // Find the product that correspond with the id provided in route.
-    this.item = items.find(product => product.id === productIdFromRoute);
+  saveForLater(item: Item){
+    this.savedItemService.addSavedItem(item);
   }
 }
 
