@@ -5,18 +5,21 @@ import {RouterModule} from "@angular/router";
 import {AppComponent} from './app.component';
 import {ItemListComponent} from './item-list/item-list.component';
 import { ItemComponent } from './item/item.component';
+import { SavedItemsComponent } from './saved-items/saved-items.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemListComponent,
-    ItemComponent
+    ItemComponent,
+    SavedItemsComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       {path: '', component: ItemListComponent},
-      {path: 'items/:itemId', component: ItemComponent}
+      {path: 'items/saved', component: SavedItemsComponent},
+      {path: 'items/:itemId', component: ItemComponent},
     ])
   ],
   providers: [],

@@ -1,6 +1,16 @@
 <main>
   <h1>App</h1>
   <div class="router-outlet-container">
+    <nav>
+      <ul>
+        <li>
+          <a [routerLink]="['']">All Items</a>
+        </li>
+        <li>
+          <a [routerLink]="['/items/saved']">Saved Items</a>
+        </li>
+      </ul>
+    </nav>
     <router-outlet></router-outlet>
   </div>
 </main>
