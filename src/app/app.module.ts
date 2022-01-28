@@ -7,6 +7,8 @@ import {ItemListComponent} from './item-list/item-list.component';
 import { ItemComponent } from './item/item.component';
 import { SavedItemsComponent } from './saved-items/saved-items.component';
 import { NavComponentComponent } from './nav-component/nav-component.component';
+import { CreateItemComponent } from './create-item/create-item.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -14,15 +16,18 @@ import { NavComponentComponent } from './nav-component/nav-component.component';
     ItemListComponent,
     ItemComponent,
     SavedItemsComponent,
-    NavComponentComponent
+    NavComponentComponent,
+    CreateItemComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       {path: '', component: ItemListComponent},
       {path: 'items/saved', component: SavedItemsComponent},
+      {path: 'items/create', component: CreateItemComponent},
       {path: 'items/:itemId', component: ItemComponent},
-    ])
+    ]),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,24 @@
+<form [formGroup]="createItemForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">
+      Name
+    </label>
+    <input id="name" type="text" formControlName="name">
+  </div>
+
+  <div>
+    <label for="description">
+      Description
+    </label>
+    <input id="description" type="text" formControlName="description">
+  </div>
+
+  <div>
+    <label for="longDescription">
+      Long description
+    </label>
+    <input id="longDescription" type="text" formControlName="longDescription">
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
