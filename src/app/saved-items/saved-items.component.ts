@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SaveItemService} from "../save-item.service";
+import {ItemService} from "../item.service";
 
 @Component({
   selector: 'app-saved-items',
@@ -8,9 +9,12 @@ import {SaveItemService} from "../save-item.service";
 })
 export class SavedItemsComponent implements OnInit {
 
-  constructor(private savedItemService: SaveItemService ) { }
+  constructor(
+    private savedItemService: SaveItemService,
+    private itemService: ItemService,
+    ) { }
 
-  savedItems = this.savedItemService.getSavedItems();
+  savedItems = this.itemService.getItems().filter(currentItem => this.savedItemService.getSavedItems().includes(currentItem.id));
 
   ngOnInit(): void {
   }
