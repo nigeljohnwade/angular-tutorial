@@ -10,7 +10,6 @@ export class ItemService {
 
   addItem(item: Item){
     this.items.push(item);
-    console.log(items);
   }
 
   getItems(){

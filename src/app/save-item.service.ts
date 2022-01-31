@@ -13,16 +13,13 @@ export class SaveItemService {
     }else{
       this.savedItems.push(item);
     }
-    console.log(this.savedItems);
   }
   removeSavedItem(item: Item) {
     this.savedItems = this.savedItems.filter(currentItem => item.id !== currentItem.id);
-    console.log(this.savedItems);
     return this.savedItems;
   }
   clearSavedItems(){
     this.savedItems = [];
-    console.log(this.savedItems);
     return this.savedItems;
   }
   getSavedItems(){

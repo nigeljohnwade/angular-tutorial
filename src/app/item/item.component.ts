@@ -20,21 +20,12 @@ export class ItemComponent implements OnInit {
 
   ngOnInit() {
     this.isSavedItem = false;
-    console.log(this.isSavedItem);
     const routeParams = this.route.snapshot.paramMap;
     const itemIdFromRoute = Number(routeParams.get('itemId'));
     this.item = items.find(item => item.id === itemIdFromRoute);
     if (this.savedItemService.getSavedItem(this.item.id)) {
-      console.log('item is saved');
       this.isSavedItem = true;
     }
-    console.log(this.isSavedItem);
-  }
-
-  ngDoCheck() {
-    console.log('DoCheck');
-    console.log(this.isSavedItem);
-    console.log(this.item);
   }
 
   saveForLater(item: Item) {

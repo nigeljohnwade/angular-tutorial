@@ -28,7 +28,6 @@ export class CreateItemComponent implements OnInit {
   onSubmit(){
     // @ts-ignore
     const maxId = this.itemService.getItems().reduce((a: number, b: Item) => {
-      console.log(a);
       return Math.max(a, b.id);
     }, 0);
     this.itemService.addItem({
