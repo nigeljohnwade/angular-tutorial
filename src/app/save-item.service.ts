@@ -5,17 +5,17 @@ import {Item} from "./items";
   providedIn: 'root'
 })
 export class SaveItemService {
-  savedItems: Item[] = [];
+  savedItems: Number[] = [];
   constructor() { }
-  addSavedItem(item: Item){
-    if(Boolean(this.savedItems.find(currentItem => currentItem.id === item.id))){
+  addSavedItem(itemId: Number){
+    if(Boolean(this.savedItems.find(currentItem => currentItem === itemId))){
       alert('Already saved');
     }else{
-      this.savedItems.push(item);
+      this.savedItems.push(itemId);
     }
   }
-  removeSavedItem(item: Item) {
-    this.savedItems = this.savedItems.filter(currentItem => item.id !== currentItem.id);
+  removeSavedItem(itemId: Number) {
+    this.savedItems = this.savedItems.filter(currentItem => itemId !== currentItem);
     return this.savedItems;
   }
   clearSavedItems(){
@@ -26,7 +26,7 @@ export class SaveItemService {
     return this.savedItems;
   }
   getSavedItem(itemId: number){
-    return this.savedItems.find(currentItem => currentItem.id === itemId);
+    return this.savedItems.find(currentItem => currentItem === itemId);
   }
 
 }

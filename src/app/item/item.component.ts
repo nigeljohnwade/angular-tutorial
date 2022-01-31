@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {SaveItemService} from "../save-item.service";
-import {Item, items} from "../items";
+import {ItemService} from "../item.service";
+import {Item} from "../items";
 
 @Component({
   selector: 'app-item',
@@ -14,7 +15,8 @@ export class ItemComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private savedItemService: SaveItemService
+    private savedItemService: SaveItemService,
+    private itemService: ItemService,
   ) {
   }
 
@@ -22,19 +24,19 @@ export class ItemComponent implements OnInit {
     this.isSavedItem = false;
     const routeParams = this.route.snapshot.paramMap;
     const itemIdFromRoute = Number(routeParams.get('itemId'));
-    this.item = items.find(item => item.id === itemIdFromRoute);
+    this.item = this.itemService.getItems().find(item => item.id === itemIdFromRoute);
     if (this.savedItemService.getSavedItem(this.item.id)) {
       this.isSavedItem = true;
     }
   }
 
-  saveForLater(item: Item) {
-    this.savedItemService.addSavedItem(item);
+  saveForLater(itemId: Number) {
+    this.savedItemService.addSavedItem(itemId);
     this.isSavedItem = true;
   }
 
-  removeFromSaved(item: Item){
-    this.savedItemService.removeSavedItem(item)
+  removeFromSaved(itemId: Number){
+    this.savedItemService.removeSavedItem(itemId)
     this.isSavedItem = false;
   }
 }
