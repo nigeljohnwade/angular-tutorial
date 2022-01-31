@@ -1,5 +1,6 @@
 <div class="item-container">
   <p>{{item.name}}</p>
+  <p>{{item.description}}</p>
   <p>{{item.longDescription}}</p>
   <button *ngIf="!isSavedItem" (click)="saveForLater(item.id)">Save</button>
   <button *ngIf="isSavedItem" (click)="removeFromSaved(item.id)">Unsave</button>

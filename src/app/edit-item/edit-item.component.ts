@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {ItemService} from "../item.service";
-import {Item, items} from "../items";
+import {Item} from "../items";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -29,7 +29,7 @@ export class EditItemComponent implements OnInit {
   ngOnInit() {
     const routeParams = this.route.snapshot.paramMap;
     const itemIdFromRoute = Number(routeParams.get('itemId'));
-    this.item = items.find(item => item.id === itemIdFromRoute);
+    this.item = this.itemService.getItems().find(item => item.id === itemIdFromRoute);
     this.editItemForm.patchValue({
       id: this.item.id,
       name: this.item.name,

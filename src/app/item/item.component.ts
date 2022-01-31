@@ -21,6 +21,7 @@ export class ItemComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('Init')
     this.isSavedItem = false;
     const routeParams = this.route.snapshot.paramMap;
     const itemIdFromRoute = Number(routeParams.get('itemId'));
