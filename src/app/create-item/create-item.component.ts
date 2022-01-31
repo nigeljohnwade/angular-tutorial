@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder} from "@angular/forms";
 import {ItemService} from "../item.service";
+import {Item} from "../items";
 
 @Component({
   selector: 'app-create-item',
@@ -25,7 +26,14 @@ export class CreateItemComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.createItemForm.value);
-    console.log('submit');
+    // @ts-ignore
+    const maxId = this.itemService.getItems().reduce((a: number, b: Item) => {
+      console.log(a);
+      return Math.max(a, b.id);
+    }, 0);
+    this.itemService.addItem({
+      id: maxId + 1,
+      ...this.createItemForm.value
+    });
   }
 }
