@@ -3,4 +3,5 @@
   <p>{{item.longDescription}}</p>
   <button *ngIf="!isSavedItem" (click)="saveForLater(item)">Save</button>
   <button *ngIf="isSavedItem" (click)="removeFromSaved(item)">Unsave</button>
+  <a [routerLink]="['/items/edit', item.id]" >Edit Item</a>
 </div>

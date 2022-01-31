@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Item, items} from "./items";
 
 @Injectable({
@@ -6,17 +6,28 @@ import {Item, items} from "./items";
 })
 export class ItemService {
   items: Item[] = items;
-  constructor() { }
 
-  addItem(item: Item){
+  constructor() {
+  }
+
+  addItem(item: Item) {
     this.items.push(item);
   }
 
-  getItems(){
+  getItems() {
     return this.items;
   }
 
-  getItem(itemId: number){
+  getItem(itemId: number) {
     return this.items.find(currentItem => currentItem.id === itemId);
+  }
+
+  replaceItem(item: Item) {
+    const newItems = [
+      ...this.items.filter((currentItem) => item.id !== currentItem.id),
+      item,
+    ];
+    console.log(newItems);
+    this.items = newItems;
   }
 }
