@@ -1,0 +1,15 @@
+form > .input-group + .input-group{
+  margin-top: 1rem;
+}
+form > .action-group{
+  margin-top: 1.5rem;
+}
+
+form > .action-group > * + *{
+  margin-left: 0.75rem;
+}
+
+.label{
+  display: block;
+}
+

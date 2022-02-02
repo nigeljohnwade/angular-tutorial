@@ -1,9 +1,11 @@
 <h2>Saved Items</h2>
-<ul *ngFor="let savedItem of savedItems">
-  <li *ngIf="savedItem.name && savedItem.description">
-    <a [routerLink]="['/items', savedItem.id]">
-      <p>{{savedItem.name}}</p>
-      <p>{{savedItem.description}}</p>
-    </a>
+<ul>
+  <li *ngFor="let savedItem of savedItems">
+    <div *ngIf="savedItem.name && savedItem.description">
+      <a [routerLink]="['/items', savedItem.id]">
+        <p>{{savedItem.name}}</p>
+        <p>{{savedItem.description}}</p>
+      </a>
+    </div>
   </li>
 </ul>
