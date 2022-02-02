@@ -1,24 +1,27 @@
 <form [formGroup]="editItemForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="name">
+  <div class="input-group">
+    <label class="label" for="name">
       Name
     </label>
     <input id="name" type="text" formControlName="name">
   </div>
 
-  <div>
-    <label for="description">
+  <div class="input-group">
+    <label class="label" for="description">
       Description
     </label>
     <input id="description" type="text" formControlName="description">
   </div>
 
-  <div>
-    <label for="longDescription">
+  <div class="input-group">
+    <label class="label" for="longDescription">
       Long description
     </label>
     <input id="longDescription" type="text" formControlName="longDescription">
   </div>
 
-  <button type="submit">Submit</button>
+  <div class="action-group">
+    <a [routerLink]="['/items/', item.id]">Cancel</a>
+    <button type="submit">Submit</button>
+  </div>
 </form>
