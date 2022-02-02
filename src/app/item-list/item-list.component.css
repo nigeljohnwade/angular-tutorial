@@ -1,0 +1,15 @@
+ul {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  list-style-type: none;
+}
+
+ul > li {
+  margin-bottom: 2rem;
+}
+
+ul > li > div{
+  padding: 0.5rem;
+  background-color: aliceblue;
+}

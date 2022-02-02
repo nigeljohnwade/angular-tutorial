@@ -1,1 +1,9 @@
+.header{
+  min-height: 6rem;
+  padding: 1rem;
+  background-color: cadetblue;
+}
 
+.main{
+  padding: 1rem;
+}

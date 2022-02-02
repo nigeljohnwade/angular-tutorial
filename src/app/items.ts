@@ -23,5 +23,23 @@ export const items = [
     name: 'Item 3',
     description: 'description 3',
     longDescription: 'Long description 3',
+  },
+  {
+    id: 4,
+    name: 'Item 4',
+    description: 'description 4',
+    longDescription: 'Long description 4',
+  },
+  {
+    id: 5,
+    name: 'Item 5',
+    description: 'description 5',
+    longDescription: 'Long description 5',
+  },
+  {
+    id: 6,
+    name: 'Item 6',
+    description: 'description 6',
+    longDescription: 'Long description 6',
   }
 ];
